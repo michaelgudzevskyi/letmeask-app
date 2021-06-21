@@ -2,15 +2,17 @@ import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 
+import "../styles/auth.scss"
+
 export const Home = () => {
 	return (
-		<div>
+		<div className="page-auth">
 			<aside>
 				<img src={illustrationImg} alt="Illustration" />
 				<strong>Create Q&amp;A rooms</strong>
 				<p>learn and share knowledge with other people</p>
 			</aside>
-			<main>
+			<main className="main-content">
 				<div>
 					<img src={logoImg} alt="Let me asl logo" />
 					<button>
