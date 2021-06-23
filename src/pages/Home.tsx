@@ -13,8 +13,7 @@ import "../styles/auth.scss";
 
 
 export const Home = () => {
-	const value = useContext(TestContext)
-	console.log('value: ', value);
+	const { value, setValue } = useContext(TestContext)
 
 	const history = useHistory()
 
