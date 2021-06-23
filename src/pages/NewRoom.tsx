@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom'
 // import { useAuth } from '../hooks/useAuth';
 
@@ -8,6 +8,8 @@ import { Button } from "../components/Button";
 import "../styles/auth.scss";
 
 export const NewRoom = () => {
+  const [newRoom, setNewRoom] = useState('')
+
   // const { user } = useAuth()
 
   const handleCreateRoom = async (event: FormEvent) => {
@@ -31,7 +33,11 @@ export const NewRoom = () => {
           <h2>Criar uma nova sala</h2>
 
           <form onSubmit={handleCreateRoom}>
-            <input type='text' placeholder='Nome da sala' />
+            <input 
+              type='text' 
+              placeholder='Nome da sala' 
+              onChange={event => setNewRoom(event.target.value)}
+            />
             <Button type='submit'>Criar sala</Button>
           </form>
 
