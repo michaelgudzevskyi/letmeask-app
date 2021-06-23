@@ -1,4 +1,4 @@
-// import { useContext } from 'react';
+import { FormEvent } from 'react';
 import { Link } from 'react-router-dom'
 // import { useAuth } from '../hooks/useAuth';
 
@@ -9,6 +9,10 @@ import "../styles/auth.scss";
 
 export const NewRoom = () => {
   // const { user } = useAuth()
+
+  const handleCreateRoom = async (event: FormEvent) => {
+    event.preventDefault();
+	}
 
   return (
     <div id='page-auth'>
@@ -25,7 +29,8 @@ export const NewRoom = () => {
         <div className='main-content'>
           <img src={logoImg} alt='Letmeask' />
           <h2>Criar uma nova sala</h2>
-          <form>
+
+          <form onSubmit={handleCreateRoom}>
             <input type='text' placeholder='Nome da sala' />
             <Button type='submit'>Criar sala</Button>
           </form>
