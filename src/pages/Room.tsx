@@ -1,6 +1,8 @@
 import logoImg from "../assets/images/logo.svg";
 import { Button } from "../components/Button";
 
+import "../styles/room.scss";
+
 export const Room = () => {
 
 
@@ -27,7 +29,7 @@ export const Room = () => {
 
 					<div className="form-footer">
 						<span>
-							To ask your question, you have to be 
+							To ask your question, you have to be {''}
 							<button type="button">authorized.</button>
 						</span>
 
