@@ -69,10 +69,17 @@ export const Room = () => {
           />
 
           <div className="form-footer">
-            <span>
-              To ask your question, you have to be {''}
-              <button type="button">authorized.</button>
-            </span>
+            {user ? (
+              <div className="user-info">
+                <img src={user.avatar} alt="User Avatar" />
+                <span>{user.name}</span>
+              </div>
+            ) : (
+              <span>
+                To ask your question, you have to be {''}
+                <button type="button">authorized.</button>
+              </span>
+            )}
 
             <Button type="submit" disabled={!user}>
               Send your question
