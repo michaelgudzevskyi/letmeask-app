@@ -19,7 +19,13 @@ export const Room = () => {
 
   const roomId = params.id
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    const roomRef = database.ref(`/rooms/${roomId}`)
+
+    roomRef.once('value', room => {
+      console.log('room: ', room.val())
+    })
+  }, [])
 
   const handleSendQuestion = async (event: FormEvent) => {
     event.preventDefault()
