@@ -36,8 +36,9 @@ export const Home = () => {
 
     const roomRef = await database.ref(`rooms/${roomCode}`).get()
 
-    if (roomRef.exists()) {
-      console.log('Room does not exist.');
+    if (!roomRef.exists()) {
+      alert('Room does not exist.');
+      return
     }
 
     history.push(`rooms/${roomCode}`)
