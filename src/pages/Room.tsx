@@ -19,7 +19,9 @@ export const Room = () => {
 
   const roomId = params.id
 
-  const handleSendQuestion = async () => {
+  const handleSendQuestion = async (event: FormEvent) => {
+    event.preventDefault()
+
     if (newQuestion.trim() === '') {
       return
     }
