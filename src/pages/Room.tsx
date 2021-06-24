@@ -107,8 +107,8 @@ export const Room = () => {
 
       <main onSubmit={handleSendQuestion}>
         <div className="room-title">
-          <h1>Room React</h1>
-          <span>4 questions</span>
+          <h1>Room {title}</h1>
+          {questions.length > 0 && <span>{questions.length} questions</span>}
         </div>
 
         <form>
