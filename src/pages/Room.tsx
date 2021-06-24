@@ -12,11 +12,11 @@ export const Room = () => {
 				<div className="content">
 					<img src={logoImg} alt="Let me ask" />
 
-					<div></div>
+					<div>code</div>
 				</div>
 			</header>
 
-			<main className="content">
+			<main>
 				<div className="room-title">
 					<h1>Room React</h1>
 					<span>4 questions</span>
