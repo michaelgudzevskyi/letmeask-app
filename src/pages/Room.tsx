@@ -39,7 +39,17 @@ export const Room = () => {
       const databaseRoom = room.val()
       const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {}
 
-      const parsedQuestions = Object.entries(firebaseQuestions.questions)
+      const parsedQuestions = Object.entries(firebaseQuestions).map(
+        ([key, value]) => {
+          return {
+            id: key,
+            content: value.content,
+            author: value.author,
+            isHighlighted: value.isHighlighted,
+            isAnswered: value.isAnswered,
+          }
+        },
+      )
     })
   }, [roomId])
 
