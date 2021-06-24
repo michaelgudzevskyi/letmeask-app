@@ -72,7 +72,9 @@ export const Room = () => {
               <button type="button">authorized.</button>
             </span>
 
-            <Button type="submit">Send your question</Button>
+            <Button type="submit" disabled={!user}>
+              Send your question
+            </Button>
           </div>
         </form>
       </main>
