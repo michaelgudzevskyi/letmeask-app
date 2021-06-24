@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import logoImg from '../assets/images/logo.svg'
 import { Button } from '../components/Button'
@@ -18,6 +18,8 @@ export const Room = () => {
   const { user } = useAuth()
 
   const roomId = params.id
+
+  useEffect(() => {}, [])
 
   const handleSendQuestion = async (event: FormEvent) => {
     event.preventDefault()
