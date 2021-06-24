@@ -21,12 +21,25 @@ type FirebaseQuestions = Record<
   }
 >
 
+type Question = {
+  id: string
+  author: {
+    name: string
+    avatar: string
+  }
+  content: string
+  isAnswered: boolean
+  isHighlighted: boolean
+}
+
 type RoomParams = {
   id: string
 }
 
 export const Room = () => {
   const [newQuestion, setNewQuestion] = useState('')
+  const [questions, setQuestions] = useState<Question[]>([])
+  const [title, setTitle] = useState('')
   const params = useParams<RoomParams>()
   const { user } = useAuth()
 
@@ -50,6 +63,9 @@ export const Room = () => {
           }
         },
       )
+
+      setTitle(databaseRoom.title)
+      setQuestions(parsedQuestions)
     })
   }, [roomId])
 
