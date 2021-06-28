@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import logoImg from '../assets/images/logo.svg'
 import { Button } from '../components/Button'
+import { Question } from '../components/Question'
 import { RoomCode } from '../components/RoomCode'
 import { useAuth } from '../hooks/useAuth'
 import { database } from '../services/firebase'
@@ -21,7 +22,7 @@ type FirebaseQuestions = Record<
   }
 >
 
-type Question = {
+type QuestionSingle = {
   id: string
   author: {
     name: string
@@ -38,7 +39,7 @@ type RoomParams = {
 
 export const Room = () => {
   const [newQuestion, setNewQuestion] = useState('')
-  const [questions, setQuestions] = useState<Question[]>([])
+  const [questions, setQuestions] = useState<QuestionSingle[]>([])
   const [title, setTitle] = useState('')
   const params = useParams<RoomParams>()
   const { user } = useAuth()
@@ -136,6 +137,10 @@ export const Room = () => {
             </Button>
           </div>
         </form>
+
+        {questions.map(question => (
+          <Question content={question.content} author={question.author} />
+        ))}
       </main>
     </div>
   )

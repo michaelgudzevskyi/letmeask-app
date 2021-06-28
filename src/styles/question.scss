@@ -1,4 +1,4 @@
-.question-item {
+.question {
   background-color: #fefefe;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
@@ -17,9 +17,9 @@
 
   margin-top: 8px;
 
-  // & + .question-item {
-  //   margin-top: 8px;
-  // }
+  & + .question-item {
+    margin-top: 8px;
+  }
 
   p {
     display: flex;
