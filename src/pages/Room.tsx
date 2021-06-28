@@ -139,7 +139,11 @@ export const Room = () => {
         </form>
 
         {questions.map(question => (
-          <Question content={question.content} author={question.author} />
+          <Question
+            key={question.id}
+            content={question.content}
+            author={question.author}
+          />
         ))}
       </main>
     </div>
